@@ -1,0 +1,815 @@
+{
+ "allow_import": 1,
+ "autoname": "RNA.##########",
+ "creation": "2020-09-24 19:39:48.514221",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "household_id",
+  "section_break_2",
+  "block_1",
+  "section_break_4",
+  "city",
+  "date_of_interview",
+  "respondent_classification",
+  "respondent_gender",
+  "marital_status",
+  "family_structure",
+  "column_break_3",
+  "interviewer_name",
+  "completion_status",
+  "interview_start_time",
+  "interview_end_time",
+  "duration_of_interview",
+  "section_break_10",
+  "block_2",
+  "section_break_20",
+  "pds_status",
+  "pds_status_no_section",
+  "pds_status_no_1",
+  "pds_status_no_2",
+  "column_break_22",
+  "pds_status_no_3",
+  "pds_status_no_4",
+  "pds_status_no_r",
+  "section_break_26",
+  "pmjdy_account",
+  "pmjdy_avail_money",
+  "pmjdy_avail_money_no",
+  "pmjdy_no_1",
+  "pmjdy_no_2",
+  "column_break_32",
+  "pmjdy_no_3",
+  "pmjdy_no_4",
+  "pmjdy_no_r",
+  "section_break_36",
+  "receiving_pension",
+  "section_break_40",
+  "block_3",
+  "section_break_43",
+  "alt_work",
+  "alt_work_yes",
+  "alt_work_no_section",
+  "alt_work_no_1",
+  "alt_work_no_2",
+  "column_break_45",
+  "alt_work_no_3",
+  "alt_work_no_4",
+  "alt_work_no_r",
+  "section_break_49",
+  "breadwinners_impacted",
+  "breadwinners_impacted_yes_section",
+  "breadwinners_impacted_yes_1",
+  "breadwinners_impacted_yes_2",
+  "column_break_54",
+  "breadwinners_impacted_yes_3",
+  "breadwinners_impacted_yes_4",
+  "breadwinners_impacted_yes_r",
+  "section_break_58",
+  "interested_in_working",
+  "interested_in_working_no",
+  "section_break_60",
+  "block_4",
+  "section_break_67",
+  "suffering_from_illness",
+  "health_condition_worsened",
+  "your_approach_section",
+  "your_approach_1",
+  "your_approach_2",
+  "your_approach_3",
+  "column_break_68",
+  "your_approach_4",
+  "your_approach_5",
+  "your_approach_r",
+  "section_break_72",
+  "block_5",
+  "section_break_80",
+  "elderly_abuse",
+  "nature_of_inflicted_abuse_section",
+  "abuse_1",
+  "abuse_2",
+  "column_break_78",
+  "abuse_3",
+  "abuse_4",
+  "section_break_16",
+  "seek_relief_twds_abuse",
+  "seek_relief_twds_abuse_no_section",
+  "relief_no_1",
+  "relief_no_2",
+  "column_break_86",
+  "relief_no_3",
+  "relief_no_4",
+  "relief_no_r",
+  "relief_yes_section",
+  "relief_yes_1",
+  "relief_yes_2",
+  "column_break_93",
+  "relief_yes_3",
+  "relief_yes_4",
+  "relief_yes_r",
+  "your_condition_in_lockdown_section",
+  "your_condition_1",
+  "your_condition_2",
+  "your_condition_3",
+  "your_condition_4",
+  "your_condition_5",
+  "column_break_103",
+  "your_condition_6",
+  "your_condition_7",
+  "your_condition_8",
+  "your_condition_9",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "household_id",
+   "fieldtype": "Data",
+   "label": "Household ID"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "block_1",
+   "fieldtype": "Heading",
+   "label": "BLOCK I: DEMOGRAPHIC DETAILS"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Select",
+   "label": "City",
+   "options": "Mumbai\nDelhi\nChennai\nBengaluru\nKolkata"
+  },
+  {
+   "fieldname": "date_of_interview",
+   "fieldtype": "Date",
+   "label": "Date of Interview"
+  },
+  {
+   "fieldname": "respondent_classification",
+   "fieldtype": "Select",
+   "label": "Respondent Classification",
+   "options": "Young Old (60-69)\nMiddle Old (70-79)\nSeverely Old (80+)"
+  },
+  {
+   "fieldname": "respondent_gender",
+   "fieldtype": "Select",
+   "label": "Respondent Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "Single\nMarried\nWidow\nWidower"
+  },
+  {
+   "fieldname": "family_structure",
+   "fieldtype": "Select",
+   "label": "Family Structure",
+   "options": "Nuclear\nJoint"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "interviewer_name",
+   "fieldtype": "Data",
+   "label": "Interviewer Name"
+  },
+  {
+   "fieldname": "completion_status",
+   "fieldtype": "Select",
+   "label": "Completion Status",
+   "options": "Did not complete interview\nCompleted interview"
+  },
+  {
+   "depends_on": "eval:doc.interview_end_time",
+   "fieldname": "duration_of_interview",
+   "fieldtype": "Float",
+   "label": "Duration of interview (in minutes)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "interview_start_time",
+   "fieldtype": "Datetime",
+   "label": "Interview start time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "interview_end_time",
+   "fieldtype": "Datetime",
+   "label": "Interview end time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "block_2",
+   "fieldtype": "Heading",
+   "label": "BLOCK II: RIGHTS AND ENTITLEMENTS"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pds_status",
+   "fieldtype": "Select",
+   "label": "Have you been able to avail ration and other essentials regularly from the PDS? ",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.pds_status == 'No'",
+   "fieldname": "pds_status_no_section",
+   "fieldtype": "Section Break",
+   "label": "If no, Why?"
+  },
+  {
+   "default": "0",
+   "fieldname": "pds_status_no_1",
+   "fieldtype": "Check",
+   "label": "Absence of Ration Cards "
+  },
+  {
+   "default": "0",
+   "fieldname": "pds_status_no_2",
+   "fieldtype": "Check",
+   "label": "Not aware of any such schemes"
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pds_status_no_3",
+   "fieldtype": "Check",
+   "label": "Aware of provisions, but did not know  how to access them "
+  },
+  {
+   "default": "0",
+   "fieldname": "pds_status_no_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.pds_status_no_4 == 1",
+   "description": "Enter reason if any other",
+   "fieldname": "pds_status_no_r",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval: doc.pds_status=='Yes'",
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pmjdy_account",
+   "fieldtype": "Select",
+   "label": "Do you possess a Jan Dhan account under the PMJDY?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.pmjdy_account == 'Yes'",
+   "fieldname": "pmjdy_avail_money",
+   "fieldtype": "Select",
+   "label": "If yes, Were you able to avail money from your Jan Dhan account?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.pmjdy_account == 'No'",
+   "fieldname": "pmjdy_avail_money_no",
+   "fieldtype": "Section Break",
+   "label": "If no, Why? "
+  },
+  {
+   "default": "0",
+   "fieldname": "pmjdy_no_1",
+   "fieldtype": "Check",
+   "label": "Did not receive any cash transfer from Govt.  "
+  },
+  {
+   "default": "0",
+   "fieldname": "pmjdy_no_2",
+   "fieldtype": "Check",
+   "label": "Not aware of any cash transfer from the Govt."
+  },
+  {
+   "fieldname": "column_break_32",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "pmjdy_no_3",
+   "fieldtype": "Check",
+   "label": "Did not know how to verify whether amount has been credited/ status of their account. "
+  },
+  {
+   "default": "0",
+   "fieldname": "pmjdy_no_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.pmjdy_no_4 == 1",
+   "description": "Enter the reason if any other",
+   "fieldname": "pmjdy_no_r",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_36",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "receiving_pension",
+   "fieldtype": "Select",
+   "label": "Receiving Pension",
+   "options": "\nNo\nYes"
+  },
+  {
+   "fieldname": "section_break_40",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "block_3",
+   "fieldtype": "Heading",
+   "label": "BLOCK III: LIVELIHOOD (Not applicable for Oldest Old)"
+  },
+  {
+   "depends_on": "eval: doc.respondent_classification != 'Severely Old (80+)'",
+   "fieldname": "section_break_43",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "alt_work",
+   "fieldtype": "Select",
+   "label": "Are you presently engaged in any form of work/alternate livelihoods to support your living?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.alt_work == 'Yes'",
+   "fieldname": "alt_work_yes",
+   "fieldtype": "Data",
+   "label": "If yes, What?"
+  },
+  {
+   "depends_on": "eval:doc.alt_work == 'No'",
+   "fieldname": "alt_work_no_section",
+   "fieldtype": "Section Break",
+   "label": "If no, Why?"
+  },
+  {
+   "default": "0",
+   "fieldname": "alt_work_no_1",
+   "fieldtype": "Check",
+   "label": "Illness and Disability"
+  },
+  {
+   "default": "0",
+   "fieldname": "alt_work_no_2",
+   "fieldtype": "Check",
+   "label": "Caregiving Responsibility"
+  },
+  {
+   "fieldname": "column_break_45",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "alt_work_no_3",
+   "fieldtype": "Check",
+   "label": "Loss of work with the lockdown"
+  },
+  {
+   "default": "0",
+   "fieldname": "alt_work_no_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.alt_work_no_4 == 1",
+   "description": "Enter reason if any other",
+   "fieldname": "alt_work_no_r",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval: doc.alt_work == 'Yes'",
+   "fieldname": "section_break_49",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "breadwinners_impacted",
+   "fieldtype": "Select",
+   "label": "Has the livelihood of the breadwinners in your household been impacted with the lockdown?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.breadwinners_impacted == 'Yes'",
+   "fieldname": "breadwinners_impacted_yes_section",
+   "fieldtype": "Section Break",
+   "label": "If so, How?"
+  },
+  {
+   "default": "0",
+   "fieldname": "breadwinners_impacted_yes_1",
+   "fieldtype": "Check",
+   "label": "Loss of wages"
+  },
+  {
+   "default": "0",
+   "fieldname": "breadwinners_impacted_yes_2",
+   "fieldtype": "Check",
+   "label": "Unable to afford food and medicines"
+  },
+  {
+   "fieldname": "column_break_54",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "breadwinners_impacted_yes_3",
+   "fieldtype": "Check",
+   "label": "Not been able to repay debts "
+  },
+  {
+   "default": "0",
+   "fieldname": "breadwinners_impacted_yes_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.breadwinners_impacted_yes_4 == 1",
+   "fieldname": "breadwinners_impacted_yes_r",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval: doc.breadwinners_impacted == 'Yes'",
+   "fieldname": "section_break_58",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "interested_in_working",
+   "fieldtype": "Select",
+   "label": "Would you be interested in doing any kind of skilled/semi-skilled work?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.interested_in_working == 'No'",
+   "fieldname": "interested_in_working_no",
+   "fieldtype": "Data",
+   "label": "If no, Why?"
+  },
+  {
+   "fieldname": "section_break_60",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "block_4",
+   "fieldtype": "Heading",
+   "label": "BLOCK IV: HEALTHCARE APPROACH"
+  },
+  {
+   "fieldname": "section_break_67",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.interested_in_working=='Yes'",
+   "fieldname": "suffering_from_illness",
+   "fieldtype": "Select",
+   "label": "Are you suffering from any of chronic illnesses like Hypertension, diabetes?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "fieldname": "health_condition_worsened",
+   "fieldtype": "Select",
+   "label": "Has your health condition worsened during the lockdown?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.health_condition_worsened == 'Yes'",
+   "fieldname": "your_approach_section",
+   "fieldtype": "Section Break",
+   "label": "What was the approach adopted by you towards this issue?"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_approach_1",
+   "fieldtype": "Check",
+   "label": "Sought help from a private healthcare provider"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_approach_2",
+   "fieldtype": "Check",
+   "label": "Sought help from a public healthcare provider"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_approach_3",
+   "fieldtype": "Check",
+   "label": "Self-Medication "
+  },
+  {
+   "fieldname": "column_break_68",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_approach_4",
+   "fieldtype": "Check",
+   "label": "Did nothing at all "
+  },
+  {
+   "default": "0",
+   "fieldname": "your_approach_5",
+   "fieldtype": "Check",
+   "label": "Any Other"
+  },
+  {
+   "depends_on": "eval:doc.your_approach_5 == 1",
+   "description": "Enter reason if any other",
+   "fieldname": "your_approach_r",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "section_break_72",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "block_5",
+   "fieldtype": "Heading",
+   "label": "BLOCK V: PYSCHOSOCIAL CONCERNS"
+  },
+  {
+   "fieldname": "section_break_80",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "elderly_abuse",
+   "fieldtype": "Select",
+   "label": "Have you come across/heard any case of elderly abuse in your neighbourhood?",
+   "options": "\nNo\nYes"
+  },
+  {
+   "depends_on": "eval:doc.elderly_abuse == 'Yes'",
+   "fieldname": "nature_of_inflicted_abuse_section",
+   "fieldtype": "Section Break",
+   "label": "What has been the nature of the inflicted abuse?"
+  },
+  {
+   "default": "0",
+   "fieldname": "abuse_1",
+   "fieldtype": "Check",
+   "label": "Verbal abuse"
+  },
+  {
+   "default": "0",
+   "fieldname": "abuse_2",
+   "fieldtype": "Check",
+   "label": "Physical abuse"
+  },
+  {
+   "fieldname": "column_break_78",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "abuse_3",
+   "fieldtype": "Check",
+   "label": "Mental abuse  "
+  },
+  {
+   "default": "0",
+   "fieldname": "abuse_4",
+   "fieldtype": "Check",
+   "label": "All of above    "
+  },
+  {
+   "depends_on": "eval:doc.elderly_abuse =='Yes'",
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "seek_relief_twds_abuse",
+   "fieldtype": "Select",
+   "label": "Did they seek any relief towards the abuse?",
+   "options": "\nNo\nYes\nDon't know"
+  },
+  {
+   "depends_on": "eval:doc.seek_relief_twds_abuse == 'No'",
+   "fieldname": "seek_relief_twds_abuse_no_section",
+   "fieldtype": "Section Break",
+   "label": "If no, Why?"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_no_1",
+   "fieldtype": "Check",
+   "label": "Elderly battering/ harassment is perceived common "
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_no_2",
+   "fieldtype": "Check",
+   "label": "Lack of economic support and security"
+  },
+  {
+   "fieldname": "column_break_86",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_no_3",
+   "fieldtype": "Check",
+   "label": "In the best interests of the family   "
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_no_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.relief_no_4 == 1",
+   "description": "Enter reason if any other",
+   "fieldname": "relief_no_r",
+   "fieldtype": "Data"
+  },
+  {
+   "depends_on": "eval:doc.seek_relief_twds_abuse == 'Yes'",
+   "fieldname": "relief_yes_section",
+   "fieldtype": "Section Break",
+   "label": "What is the nature of relief sought from the abuse?"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_yes_1",
+   "fieldtype": "Check",
+   "label": "NGO Helpline"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_yes_2",
+   "fieldtype": "Check",
+   "label": "Police"
+  },
+  {
+   "fieldname": "column_break_93",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_yes_3",
+   "fieldtype": "Check",
+   "label": "Social Worker"
+  },
+  {
+   "default": "0",
+   "fieldname": "relief_yes_4",
+   "fieldtype": "Check",
+   "label": "Any other"
+  },
+  {
+   "depends_on": "eval:doc.relief_yes_4 == 1",
+   "description": "Enter reason if any other",
+   "fieldname": "relief_yes_r",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "your_condition_in_lockdown_section",
+   "fieldtype": "Section Break",
+   "label": "Which amongst the following conditions describes your condition with the lockdown?"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_1",
+   "fieldtype": "Check",
+   "label": "Loneliness"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_2",
+   "fieldtype": "Check",
+   "label": "Feel neglected by your family members"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_3",
+   "fieldtype": "Check",
+   "label": "Increased stress"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_4",
+   "fieldtype": "Check",
+   "label": "Increased Frustration"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_5",
+   "fieldtype": "Check",
+   "label": "Reduced sleep/insomnia"
+  },
+  {
+   "fieldname": "column_break_103",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_6",
+   "fieldtype": "Check",
+   "label": "Fear of Death"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_7",
+   "fieldtype": "Check",
+   "label": "Fear of economic stability "
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_8",
+   "fieldtype": "Check",
+   "label": "Fear about health"
+  },
+  {
+   "default": "0",
+   "fieldname": "your_condition_9",
+   "fieldtype": "Check",
+   "label": "Fear of abuse "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Rapid Needs Assessment Survey",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2020-09-25 16:05:56.530545",
+ "modified_by": "Administrator",
+ "module": "Dignity Survey",
+ "name": "Rapid Needs Assessment Survey",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RNA User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "RNA Super User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
